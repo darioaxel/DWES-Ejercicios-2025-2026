@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="jakarta.tags.core"
+      xmlns:h="jakarta.faces.html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Lista de usuarios</title>
+</head>
+<body>
+    <h1>Usuarios registrados</h1>
+
+    <c:if test="${not empty error}">
+        <p style="color:red">${error}</p>
+    </c:if>
+
+    <h:dataTable value="${usuarios}" var="u" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            ${u.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Nombre</f:facet>
+            ${u.nombre}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Email</f:facet>
+            ${u.email}
+        </h:column>
+    </h:dataTable>
+</body>
+</html>

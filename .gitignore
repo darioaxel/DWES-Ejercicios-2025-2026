@@ -1,0 +1,133 @@
+# ============================================
+# .gitignore para proyecto mixto:
+# Jakarta EE (Java + Maven/Gradle) y Django (Python)
+# ============================================
+
+# --------------------------------------------
+# ARCHIVOS DEL SISTEMA
+# --------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --------------------------------------------
+# ENTORNOS VIRTUALES Y DEPENDENCIAS PYTHON
+# --------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+.eggs/
+.Python
+env/
+venv/
+ENV/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+# Si usas Poetry, el pyproject.toml sí se debe incluir
+
+# --------------------------------------------
+# ARCHIVOS Y DIRECTORIOS DJANGO
+# --------------------------------------------
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static/
+*.log
+local_settings.py
+.env
+.env.*
+*.pot
+*.mo
+
+# Archivos de cobertura y pruebas
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.cache/
+coverage.xml
+nosetests.xml
+test-results.xml
+
+# --------------------------------------------
+# DEPENDENCIAS JAVA (Maven o Gradle)
+# --------------------------------------------
+target/
+build/
+out/
+classes/
+*.class
+*.war
+*.ear
+*.jar
+*.log
+hs_err_pid*
+replay_pid*
+
+# --------------------------------------------
+# ARCHIVOS DE CONFIGURACIÓN DEL IDE
+# --------------------------------------------
+# IntelliJ / JetBrains
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+build/
+
+# Visual Studio Code
+.vscode/
+.history/
+*.code-workspace
+
+# --------------------------------------------
+# ARCHIVOS DE SERVIDORES / DEPLOY
+# --------------------------------------------
+# Payara / GlassFish / WildFly / Tomcat
+*.domain.xml
+*.imq/
+*.autodeploy/
+*.log
+*.tmp
+*.deploy
+*.ear_deployed/
+*.war_deployed/
+*.backup
+
+# --------------------------------------------
+# ENTORNOS Y VARIABLES SENSIBLES
+# --------------------------------------------
+.env
+.env.*
+secrets.*
+*.pem
+*.key
+*.crt
+*.csr
+
+# --------------------------------------------
+# ARCHIVOS DE SISTEMAS OPERATIVOS Y TEMPORALES
+# --------------------------------------------
+*.swp
+*.swo
+*.bak
+*.tmp
+*.lock
+*~

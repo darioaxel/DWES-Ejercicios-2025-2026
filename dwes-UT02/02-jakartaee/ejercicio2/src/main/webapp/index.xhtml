@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:c="jakarta.tags.core">
+
+<h:head>
+    <title>Ejemplo02 usando JSF con Jakarta EE 10</title>
+    <meta charset="UTF-8"/>
+</h:head>
+
+<h:body>
+    <h1>Hola desde JSF, </h1>
+    <h2>Ejercicio ampliado con bucles y condicionales</h2>
+
+    <p>Nombre: <h:outputText value="#{helloBean.nombre}" /></p>
+    <p>Edad: <h:outputText value="#{helloBean.edad}" /></p>
+
+    <!-- Condicional: solo se muestra si edad > 18 -->
+    <h:panelGroup rendered="#{helloBean.edad gt 18}">
+        <p><b>El usuario es mayor de edad.</b></p>
+    </h:panelGroup>
+
+    <h:panelGroup rendered="#{helloBean.edad le 18}">
+        <p><b>El usuario es menor de edad.</b></p>
+    </h:panelGroup>
+
+    <h2>Lista de productos (con bucle ui:repeat):</h2>
+    <ul>
+        <ui:repeat value="#{helloBean.productos}" var="p">
+            <li>
+                #{p.nombre} - #{p.precio} €
+                <!-- Condicional dentro del bucle -->
+                <h:panelGroup rendered="#{p.precio lt 2.0}">
+                    <span style="color:green;">(¡Oferta!)</span>
+                </h:panelGroup>
+            </li>
+        </ui:repeat>
+    </ul>
+
+    <h2>Tabla de productos (con h:dataTable):</h2>
+    <h:dataTable value="#{helloBean.productos}" var="p" border="1">
+        <h:column>
+            <f:facet name="header">Nombre</f:facet>
+            #{p.nombre}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Precio</f:facet>
+            #{p.precio} €
+        </h:column>
+    </h:dataTable>
+</h:body>
+</html>
