@@ -1,0 +1,1 @@
+## Ejercicio 1: Consulta mediante `curl`
