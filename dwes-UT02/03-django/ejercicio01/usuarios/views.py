@@ -15,7 +15,8 @@ def usuario_view(request):
         <head><title>Datos de un Usuario</title></head>
         <body>
             <h1>Información personal</h1>
-            <p><strong>Nombre:</strong> {datos['nombre']}</p>
+            <!--Para incluir datos que se encuentran en la vista, usamos llaves como se ve a continuación -->
+            <p><strong>Mi Nombre:</strong> {datos['nombre']}</p>
             <p><strong>Apellidos:</strong> {datos['apellidos']}</p>
             <p><strong>Edad:</strong> {datos['edad']}</p>
             <p><strong>Email:</strong> {datos['email']}</p>
