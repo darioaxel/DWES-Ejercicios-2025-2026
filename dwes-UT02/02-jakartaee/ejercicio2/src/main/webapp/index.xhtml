@@ -25,7 +25,14 @@
     <h:panelGroup rendered="#{helloBean.edad le 18}">
         <p><b>El usuario es menor de edad.</b></p>
     </h:panelGroup>
+ <!-- Práctica 2: 
+        * Añade aquí la sección para mostrar la lista de usuarios.
+        * Comprueba si quieres primero que se muestra uno y después genera a todos.
+        * Estudia como se publican aquí los elementos de un objeto dentro de una clase.
+        * Utiliza la aproximación que prefieras para gestionar el total de pagos del usuario. por ejemplo, 
+          puedes usar un bucle ui:repeat y variables, o crear una función dentro del objeto que calcule el total. 
 
+   -->
     <h2>Lista de productos (con bucle ui:repeat):</h2>
     <ul>
         <ui:repeat value="#{helloBean.productos}" var="p">

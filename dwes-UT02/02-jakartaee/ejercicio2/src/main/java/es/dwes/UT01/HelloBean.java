@@ -1,14 +1,18 @@
 package es.dwes.UT01;
 
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.List;
+
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 @Named("helloBean")
 @RequestScoped
 public class HelloBean implements Serializable {
 
+    // Práctica 2: Genera en este bean el listado de usuarios que 
+    // se mostrará en la página.xhtml
+        
     private String nombre = "María";
     private int edad = 28;
 
@@ -41,4 +45,6 @@ public class HelloBean implements Serializable {
         public String getNombre() { return nombre; }
         public double getPrecio() { return precio; }
     }
+// Práctica 2: Crea aquí la clase que defina a un usuario
+    
 }
