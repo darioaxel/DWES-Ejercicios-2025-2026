@@ -1,0 +1,29 @@
+<!-- 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / "templates"],  # carpeta global
+        'APP_DIRS': True,                  # busca también dentro de las apps
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+] 
+-->
+{% extends "base.html" %}
+
+{% block title %}Listado de productos con IVA{% endblock %}
+
+{% block content %}
+<h2>Listado de productos</h2>
+<ul>
+  {% for p in productos %}
+    <li>{{ p.nombre }} — Precio con IVA: {{ p.con_iva }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

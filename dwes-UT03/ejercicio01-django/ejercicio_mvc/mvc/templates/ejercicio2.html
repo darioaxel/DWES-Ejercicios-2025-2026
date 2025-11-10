@@ -1,0 +1,13 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de productos</title>
+</head>
+<body>
+<h2>Listado de productos</h2>
+<ul>
+  {% for p in productos %}
+    <li>{{ p.nombre }} — Precio con IVA: {{ p.con_iva }}</li>
+  {% endfor %}
+</ul>
+</body>
+</html>

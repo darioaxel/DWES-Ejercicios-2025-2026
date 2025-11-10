@@ -11,7 +11,7 @@ public class HelloBean implements Serializable {
 
     private String nombre = "María";
     private int edad = 28;
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -21,11 +21,8 @@ public class HelloBean implements Serializable {
     }
 
     public List<Producto> getProductos() {
-        return List.of(
-            new Producto("Manzanas", 2.5),
-            new Producto("Peras", 3.0),
-            new Producto("Plátanos", 1.8)
-        );
+        
+        return "hola";
     }
 
     // Clase interna para productos

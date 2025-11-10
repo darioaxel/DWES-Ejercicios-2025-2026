@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}DWES Ejercicios Django{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #f5f5f5; }
+        header, footer { background: #333; color: white; padding: 1em; text-align: center; }
+        main { background: white; padding: 1.5em; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejemplo MVC Django</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Aquí irá el contenido específico de cada vista -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 - Proyecto DWES</p>
+    </footer>
+</body>
+</html>
