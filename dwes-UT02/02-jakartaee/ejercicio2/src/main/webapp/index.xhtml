@@ -33,6 +33,73 @@
           puedes usar un bucle ui:repeat y variables, o crear una función dentro del objeto que calcule el total. 
 
    -->
+     <h2>Practica 2.3: Jakarta EE</h2>
+     <ul>
+        <ui:repeat value="#{helloBean.usuarios}" var="usuario">
+            <li>
+                Nombre: #{usuario.nombre} <br/>
+                Apellidos: #{usuario.apellidos} <br/>
+                DNI: #{usuario.dni} <br/>
+                E-mail: #{usuario.email} <br/>
+                Edad: #{usuario.edad} <br/>
+                Pagos:  <br/>
+                <h:dataTable value="#{usuario.pagos}" var="pago" border="1">
+                    <h:column>
+                        <f:facet name="header">Mes</f:facet>
+                        #{pago.key}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Cantidad (€)</f:facet>
+                        <h:panelGroup rendered="#{pago.value eq 0.0}">
+                            <span style="color:red;">NO PAGADO</span>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{pago.value ne 0.0}">
+                            #{pago.value}
+                        </h:panelGroup>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Total Pagos (€)</f:facet>
+                        <h:outputText value="#{helloBean.calcularTotalPagado(usuario.pagos)}" />
+                    </h:column>
+                </h:dataTable>
+                <h:panelGroup rendered="#{helloBean.calcularTotalPagado(usuario.pagos) lt 100.0 and not helloBean.haPagadoTodosLosMeses(usuario.pagos)}">
+                    <span style="color:red;">El usuario no está al día con la cuota.</span>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{helloBean.calcularTotalPagado(usuario.pagos) ge 100.0 and not helloBean.haPagadoTodosLosMeses(usuario.pagos)}">
+                    <span style="color:red;">El usuario no está al día con la cuota.</span>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{helloBean.calcularTotalPagado(usuario.pagos) ge 100.0 and helloBean.haPagadoTodosLosMeses(usuario.pagos)}">
+                    <span style="color:green;">El usuario está al corriente de pagos.</span>
+                </h:panelGroup>               
+            </li>
+            <br/>
+        </ui:repeat>
+     </ul>
+     <!--
+     <h:dataTable value="#{helloBean.usuarios}" var="usuario" border="1">
+        <h:column>
+            <f:facet name="header">Nombre</f:facet>
+            #{usuario.nombre}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Apellidos</f:facet>
+            #{usuario.apellidos}
+        </h:column>
+        <h:column>
+            <f:facet name="header">DNI</f:facet>
+            #{usuario.dni}
+        </h:column>
+        <h:column>
+            <f:facet name="header">E-mail</f:facet>
+            #{usuario.email}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Edad</f:facet>
+            #{usuario.edad}
+        </h:column>          
+     </h:dataTable>
+    -->
+
     <h2>Lista de productos (con bucle ui:repeat):</h2>
     <ul>
         <ui:repeat value="#{helloBean.productos}" var="p">
