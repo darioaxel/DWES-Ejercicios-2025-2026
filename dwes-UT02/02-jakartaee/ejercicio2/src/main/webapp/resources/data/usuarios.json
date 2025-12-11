@@ -1,0 +1,86 @@
+[
+  {
+    "nombre": "Andrea",
+    "apellidos": "Montoya Ruiz",
+    "dni": "12345678A",
+    "email": "andrea.ruiz@example.com",
+    "edad": 28,
+    "pagos": {
+      "Enero": 5.0,
+      "Febrero": 6.0,
+      "Marzo": 5.0,
+      "Abril": 5.0,
+      "Mayo": 1.0,
+      "Junio": 10.0,
+      "Julio": 1.0,
+      "Agosto": 3.0,
+      "Septiembre": 5.0,
+      "Octubre": 2.0,
+      "Noviembre": 1.0,
+      "Diciembre": 2.0
+    }
+  },
+  {
+    "nombre": "Andrea Alexandra",
+    "apellidos": "Montoya",
+    "dni": "23456789B",
+    "email": "andrea.alexandra@example.com",
+    "edad": 22,
+    "pagos": {
+      "Enero": 50.0,
+      "Febrero": null,
+      "Marzo": 50.0,
+      "Abril": null,
+      "Mayo": 50.0,
+      "Junio": 50.0,
+      "Julio": 50.0,
+      "Agosto": null,
+      "Septiembre": 50.0,
+      "Octubre": 50.0,
+      "Noviembre": 50.0,
+      "Diciembre": 50.0
+    }
+  },
+  {
+    "nombre": "Julio",
+    "apellidos": "de La Rosa Montoya",
+    "dni": "34567890C",
+    "email": "julio.rosa@example.com",
+    "edad": 35,
+    "pagos": {
+      "Enero": 50.0,
+      "Febrero": 50.0,
+      "Marzo": 50.0,
+      "Abril": 50.0,
+      "Mayo": 50.0,
+      "Junio": null,
+      "Julio": null,
+      "Agosto": 50.0,
+      "Septiembre": 50.0,
+      "Octubre": 50.0,
+      "Noviembre": 50.0,
+      "Diciembre": 50.0
+    }
+  },
+  {
+    "nombre": "Juan",
+    "apellidos": "de La Rosa Montoya",
+    "dni": "45678901D",
+    "email": "juan.rosa@example.com",
+    "edad": 30,
+    "pagos": {
+      "Enero": 50.0,
+      "Febrero": 50.0,
+      "Marzo": 50.0,
+      "Abril": 50.0,
+      "Mayo": 50.0,
+      "Junio": 50.0,
+      "Julio": 50.0,
+      "Agosto": 50.0,
+      "Septiembre": 50.0,
+      "Octubre": 50.0,
+      "Noviembre": 50.0,
+      "Diciembre": 50.0
+    }
+  }
+]

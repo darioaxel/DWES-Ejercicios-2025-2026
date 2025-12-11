@@ -8,6 +8,7 @@
 <h:head>
     <title>Ejemplo02 usando JSF con Jakarta EE 10</title>
     <meta charset="UTF-8"/>
+    <h:outputStylesheet library="css" name="styles.css" />
 </h:head>
 
 <h:body>
@@ -25,14 +26,43 @@
     <h:panelGroup rendered="#{helloBean.edad le 18}">
         <p><b>El usuario es menor de edad.</b></p>
     </h:panelGroup>
- <!-- Práctica 2: 
-        * Añade aquí la sección para mostrar la lista de usuarios.
-        * Comprueba si quieres primero que se muestra uno y después genera a todos.
-        * Estudia como se publican aquí los elementos de un objeto dentro de una clase.
-        * Utiliza la aproximación que prefieras para gestionar el total de pagos del usuario. por ejemplo, 
-          puedes usar un bucle ui:repeat y variables, o crear una función dentro del objeto que calcule el total. 
 
-   -->
+    <!-- Sección de usuarios -->
+    <h2>Usuarios:</h2>
+    <div class="usuarios-container">
+        <ui:repeat value="#{helloBean.usuarios}" var="u">
+            <div class="usuario-box">
+                <h3>#{u.nombre} #{u.apellidos}</h3>
+                <p>DNI: #{u.dni}</p>
+                <p>Email: #{u.email}</p>
+                <p>Edad: #{u.edad}</p>
+
+                <!-- Tabla de pagos mensuales -->
+                <h:dataTable value="#{u.pagos.entrySet().toArray()}" var="entry" styleClass="pagos-table">
+                    <h:column>
+                        <f:facet name="header">Mes</f:facet>
+                        #{entry.key}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Cantidad</f:facet>
+                        <h:outputText value="#{entry.value}" rendered="#{not empty entry.value}" />
+                        <h:outputText value="NO PAGADO" styleClass="pendiente" rendered="#{empty entry.value}" />
+                    </h:column>
+                </h:dataTable>
+
+                <!-- Total anual y estado -->
+                <p><b>Total anual:</b> #{u.totalPagos} €</p>
+                <h:panelGroup rendered="#{u.alCorriente}" styleClass="pagado">
+                    El usuario está al corriente de pagos
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not u.alCorriente}" styleClass="pendiente">
+                    El usuario no está al día con la cuota
+                </h:panelGroup>
+            </div>
+        </ui:repeat>
+    </div>
+
     <h2>Lista de productos (con bucle ui:repeat):</h2>
     <ul>
         <ui:repeat value="#{helloBean.productos}" var="p">
