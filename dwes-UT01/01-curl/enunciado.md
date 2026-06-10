@@ -4,7 +4,7 @@
 ## 🧩 Ejercicio 1: Consulta de datos meteorológicos con `curl` y la API de AEMET
 
 ### 📘 Objetivo
-
+ 
 Aprender a realizar peticiones HTTP desde la línea de comandos utilizando `curl`, analizando las **cabeceras** de respuesta y el **contenido JSON** devuelto por un servicio web público.
 
 ### 🧠 Contexto
